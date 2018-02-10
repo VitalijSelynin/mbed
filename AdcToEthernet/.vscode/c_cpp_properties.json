@@ -5,9 +5,11 @@
             "includePath": [
                 "${workspaceRoot}",
                 "${workspaceRoot}/mbed-os",
+                "${workspaceRoot}/Application",
                 "${workspaceRoot}/mbed-os/targets/TARGET_STM/TARGET_STM32F7",
                 "${workspaceRoot}/mbed-os/targets/TARGET_STM/TARGET_STM32F7/TARGET_STM32F767xI",
-                "${workspaceRoot}/mbed-os/targets/TARGET_STM/TARGET_STM32F7/TARGET_STM32F767xI/device"
+                "${workspaceRoot}/mbed-os/targets/TARGET_STM/TARGET_STM32F7/TARGET_STM32F767xI/device",
+                "D:\\Keil_v5\\ARM\\ARMCC\\include\\stdio.h"
             ],
             "defines": [
                 "_DEBUG",
