@@ -4,13 +4,13 @@
 
 int main() 
 {
-  Blinky<LED1> blinky;
+  Blinky blinky(LED1);
   Application app;
   
   app.Run();
 
-  while (true) 
+  for(;;) 
   {
-    blinky.ToggleWait();
+    blinky.HeartBeat();
   }
 }

@@ -1,34 +1,29 @@
 ///////////////////////////////////////////////////////////
 //  Blinky.h
-//  Definition of the Template Class Blinky
-//  Created on:      10-Feb-2017 23:08:36
+//  Declaration of the class Blinky
+//  Created on:      10-Feb-2018 23:08:36
 //  Original author: Vitalij
 ///////////////////////////////////////////////////////////
 
 #ifndef BLINKY_H
 #define BLINKY_H
 
-#include "mbed.h"
+#include "PinNames.h"
+#include "DigitalOut.h"
 
-template<PinName T>
 class Blinky
 {
 public:
-  void Toggle(void)
-  {
-    led = !led;
-  }
-  void ToggleWait(void)
-  {
-    Toggle();
-    wait(0.5);
-  }
-  Blinky()
-  :led(T)
-  {}
+  void Toggle(void);
+
+  void ToggleWait(void);
+  
+  Blinky(PinName pin);
+
+  void HeartBeat(void);
 
 private:
-DigitalOut led;
+mbed::DigitalOut led;
  
 };
 

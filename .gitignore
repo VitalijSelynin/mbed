@@ -6,3 +6,7 @@ mbed-os-tcp-server-example/BUILD/
 AdcToEthernet/BUILD/
 
 AdcToEthernet/DebugConfig/
+
+*.Vitalij
+
+*.scvd

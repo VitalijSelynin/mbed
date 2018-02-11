@@ -1,15 +1,17 @@
 ///////////////////////////////////////////////////////////
 //  Application.cpp
-//  Implementation of the Class Application
-//  Created on:      10-Feb-2017 22:49:23
+//  Implementation of the class Application
+//  Created on:      10-Feb-2018 22:49:23
 //  Original author: Vitalij
 ///////////////////////////////////////////////////////////
 
 #include "Application.h"
-#include "mbed.h"
+#include "Debug.h"
 
 
 void Application::Run()
 {
-  printf("Starting application\n");
+  Debug::Print("Starting application");
+
+  thread.Start();
 }
