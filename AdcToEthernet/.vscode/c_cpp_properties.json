@@ -3,13 +3,21 @@
         {
             "name": "Win32",
             "includePath": [
+                "D:/Keil_v5/ARM/ARMCC/include",
                 "${workspaceRoot}",
                 "${workspaceRoot}/mbed-os",
                 "${workspaceRoot}/Application",
                 "${workspaceRoot}/mbed-os/targets/TARGET_STM/TARGET_STM32F7",
                 "${workspaceRoot}/mbed-os/targets/TARGET_STM/TARGET_STM32F7/TARGET_STM32F767xI",
                 "${workspaceRoot}/mbed-os/targets/TARGET_STM/TARGET_STM32F7/TARGET_STM32F767xI/device",
-                "D:\\Keil_v5\\ARM\\ARMCC\\include\\stdio.h"
+                "${workspaceRoot}/mbed-os/targets/TARGET_STM/TARGET_STM32F7/TARGET_STM32F767xI/TARGET_NUCLEO_F767ZI",
+                "${workspaceRoot}/mbed-os/drivers",
+                "${workspaceRoot}/mbed-os/rtos",
+                "${workspaceRoot}/mbed-os/rtos/TARGET_CORTEX/rtx5/Include",
+                "${workspaceRoot}/mbed-os/rtos/TARGET_CORTEX",
+                "${workspaceRoot}/mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include",
+                "${workspaceRoot}/mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source",
+                "${workspaceRoot}/mbed-os/features/FEATURE_LWIP/lwip-interface"
             ],
             "defines": [
                 "_DEBUG",
@@ -18,14 +26,10 @@
             "intelliSenseMode": "msvc-x64",
             "browse": {
                 "path": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.14393.0/um",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.14393.0/ucrt",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.14393.0/shared",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.14393.0/winrt",
                     "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
+                "databaseFilename": "${workspaceRoot}/build/intellisense"
             }
         }
     ],
