@@ -320,13 +320,13 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>0</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
             <useXO>0</useXO>
-            <v6Lang>1</v6Lang>
-            <v6LangP>1</v6LangP>
+            <v6Lang>3</v6Lang>
+            <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
@@ -5104,6 +5104,16 @@
               <FileName>xtea.h</FileName>
               <FileType>5</FileType>
               <FilePath>mbed-os/features/mbedtls/inc/mbedtls/xtea.h</FilePath>
+            </File>
+            <File>
+              <FileName>Kernel.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\mbed-os\rtos\Kernel.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_spi_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mbed-os\targets\TARGET_STM\TARGET_STM32F7\device\stm32f7xx_hal_spi_ex.c</FilePath>
             </File>
           </Files>
         </Group>
