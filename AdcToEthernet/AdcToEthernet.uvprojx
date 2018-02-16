@@ -410,6 +410,11 @@
               <FileType>8</FileType>
               <FilePath>.\Application\Communication.cpp</FilePath>
             </File>
+            <File>
+              <FileName>MyTcpServer.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Application\MyTcpServer.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
