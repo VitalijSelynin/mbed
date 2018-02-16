@@ -9,7 +9,7 @@
 #include "Debug.h"
 #include "VoltageReader.h"
 #include "Thread.h"
-#include "Communication.h"
+#include "MyTcpServer.h"
 
 void ApplicationThread::Start()
 {
@@ -20,12 +20,10 @@ void ApplicationThread::Run()
 {
   Debug::Print("ApplicationThread started");
   VoltageReader voltage;
-  Communication com;
+  MyTcpServer server;
 
-  com.Connect();
+  server.Start();
 
-  for(;;)
-  {
     float voltageArray[voltage.GetVoltageCount()];
     for(uint32_t i = 0; i < voltage.GetVoltageCount(); i++)
     {
@@ -37,5 +35,9 @@ void ApplicationThread::Run()
     Debug::Print("Voltage 2: ", voltageArray[2]);
     Debug::Print("Voltage 3: ", voltageArray[3]);
     rtos::Thread::wait(500);
+
+  for(;;)
+  {
+    server.Run();
   }
 }

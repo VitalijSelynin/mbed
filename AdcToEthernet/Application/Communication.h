@@ -10,17 +10,13 @@
 #ifndef COMMUNICATION_H
 #define COMMUNICATION_H
 
-class Communication
+class Communication : public EthernetInterface
 {
 public:
-  void Connect(void);
-
-  ~Communication(void);
+  nsapi_error_t Connect();
 
 private:
-  EthernetInterface net;
-  void PrintNetworkInfo(EthernetInterface& interface);
-
+  void PrintNetworkInfo();
 };
 
 
