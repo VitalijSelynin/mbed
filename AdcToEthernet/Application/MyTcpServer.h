@@ -11,6 +11,7 @@
 
 #include "TCPServer.h"
 #include "Communication.h"
+#include "TcpStateMachine.h"
 
 class MyTcpServer : private TCPServer
 {
@@ -21,25 +22,15 @@ public:
 
 private:
   Communication eth;
-  uint16_t port;
+  std::uint16_t port;
+  std::int32_t simultanConnections;
 
-  enum State
-  {
-    IDLE,
-    CONNECTING,
-    OPENING,
-    BINDING,
-    RUNNING,
-    ERROR
-  };
+  TcpStateMachine stateMachine;
 
-  State state;
+  TCPSocket clientSock;
+  SocketAddress clientAddr;
 
-  void Connecting(void);
-  void Opening(void);
-  void Binding(void);
-  void Running(void);
-  void Error(void);
+  friend class TcpStateMachine;
 };
 
 
