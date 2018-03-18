@@ -6,12 +6,12 @@
 ///////////////////////////////////////////////////////////
 
 #include "Application.h"
-#include "Debug.h"
+#include "DebugClass.h"
 
 
 void Application::Run()
 {
-  Debug::Print("Starting application");
+  DebugClass::Print("Starting application");
 
   thread.Start();
 }

@@ -4,8 +4,6 @@
 //  Created on:      16-Feb-2018 18:12:14
 //  Original author: Vitalij
 ///////////////////////////////////////////////////////////
-
-
 #ifndef MYTCPSERVER_H
 #define MYTCPSERVER_H
 

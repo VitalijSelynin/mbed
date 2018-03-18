@@ -16,6 +16,7 @@
 
 static void event_loop_thread(void *arg);
 
+#define MBED_CONF_NANOSTACK_HAL_EVENT_LOOP_THREAD_STACK_SIZE 6144
 static uint64_t event_thread_stk[MBED_CONF_NANOSTACK_HAL_EVENT_LOOP_THREAD_STACK_SIZE/8];
 static mbed_rtos_storage_thread_t event_thread_tcb;
 static const osThreadAttr_t event_thread_attr = {

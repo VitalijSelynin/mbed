@@ -333,6 +333,7 @@ uint8_t *bitcopy(uint8_t *restrict dst, const uint8_t *restrict src, uint_fast8_
 uint8_t *bitcopy0(uint8_t *restrict dst, const uint8_t *restrict src, uint_fast8_t bits);
 
 /* Provide definitions, either for inlining, or for common_functions.c */
+#define COMMON_FUNCTIONS_FN
 #if defined NS_ALLOW_INLINING || defined COMMON_FUNCTIONS_FN
 #ifndef COMMON_FUNCTIONS_FN
 #define COMMON_FUNCTIONS_FN NS_INLINE

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2017 ARM Limited. All rights reserved.
+ * Copyright (c) 2011-2015 ARM Limited. All rights reserved.
  * SPDX-License-Identifier: Apache-2.0
  * Licensed under the Apache License, Version 2.0 (the License); you may
  * not use this file except in compliance with the License.
@@ -15,19 +15,26 @@
  */
 
 /**
- * \file ns_trace.h
- * Trace interface abstraction for NanoStack library as well as application.
- *
- * Actual used trace library is mbed-trace. For usage details check mbed_trace.h.
- *
- */
-#ifndef NS_TRACE_H_
-#define NS_TRACE_H_
+* \file sn_nsdl.h
+*
+* \brief libNsdl generic header file
+*
+*/
 
-#if defined(HAVE_DEBUG) && !defined(FEA_TRACE_SUPPORT)
-#define FEA_TRACE_SUPPORT
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-#include "mbed-trace/mbed_trace.h"
+#ifndef SN_NSDL_H_
+#define SN_NSDL_H_
 
-#endif /* NS_TRACE_H_ */
+#define SN_NSDL_SUCCESS  0
+#define SN_NSDL_FAILURE (-1)
+
+#include "sn_coap_header.h"
+
+#endif /* SN_NSDL_H_ */
+
+#ifdef __cplusplus
+}
+#endif

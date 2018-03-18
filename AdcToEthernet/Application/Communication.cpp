@@ -6,20 +6,20 @@
 ///////////////////////////////////////////////////////////
 
 #include "Communication.h"
-#include "Debug.h"
+#include "DebugClass.h"
 
 nsapi_error_t Communication::Connect()
 {
-  Debug::Print("Bringing up the ethernet interface");
+  DebugClass::Print("Bringing up the ethernet interface");
   nsapi_error_t error = EthernetInterface::connect();
 
   if(0 != error)
   {
-    Debug::Print("Error during networt connection: ", error);
+    DebugClass::Print("Error during networt connection: ", error);
   }
   else
   {
-    Debug::Print("Connection established");
+    DebugClass::Print("Connection established");
     PrintNetworkInfo();
   }
 
@@ -28,8 +28,8 @@ nsapi_error_t Communication::Connect()
 
 void Communication::PrintNetworkInfo()
 {
-  Debug::Print("IP address: ", EthernetInterface::get_ip_address());
-  Debug::Print("MAC address: ", EthernetInterface::get_mac_address());
-  Debug::Print("Netmask: ", EthernetInterface::get_netmask());
-  Debug::Print("Gateway: ", EthernetInterface::get_gateway());
+  DebugClass::Print("IP address: ", EthernetInterface::get_ip_address());
+  DebugClass::Print("MAC address: ", EthernetInterface::get_mac_address());
+  DebugClass::Print("Netmask: ", EthernetInterface::get_netmask());
+  DebugClass::Print("Gateway: ", EthernetInterface::get_gateway());
 }

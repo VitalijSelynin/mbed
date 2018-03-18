@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2015 ARM Limited. All rights reserved.
+ * Copyright (c) 2015 ARM Limited. All rights reserved.
  * SPDX-License-Identifier: Apache-2.0
  * Licensed under the Apache License, Version 2.0 (the License); you may
  * not use this file except in compliance with the License.
@@ -13,25 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#ifndef NSDL_LINKER_H
+#define NSDL_LINKER_H
 
-#ifndef ARM_HAL_RANDOM_H_
-#define ARM_HAL_RANDOM_H_
-#ifdef __cplusplus
-extern "C" {
-#endif
-/**
- * \brief This function performs Random number driver init.
- */
-extern void arm_random_module_init(void);
-/**
- * \brief Get random library seed value.
- *
- * This function should return as random a value as possible, using
- * hardware sources. Repeated calls should return different values if
- * at all possible.
- */
-extern uint32_t arm_random_seed_get(void);
-#ifdef __cplusplus
-}
-#endif
-#endif /* ARM_HAL_RANDOM_H_ */
+#include <stdint.h>
+#include "nsdl-c/sn_nsdl.h"
+#include "sn_coap_header.h"
+#include "sn_coap_protocol.h"
+#include "nsdl-c/sn_nsdl_lib.h"
+#include "ns_list.h"
+
+#endif // NSDL_LINKER_H

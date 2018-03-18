@@ -7,10 +7,11 @@
 
 #include "TcpStateMachine.h"
 #include "MyTcpServer.h"
-#include "Debug.h"
+#include "DebugClass.h"
 
 TcpStateMachine::TcpStateMachine(MyTcpServer* server)
- : server(server)
+: server(server),
+  state(IDLE)
 {
   ;
 }
@@ -40,7 +41,7 @@ void TcpStateMachine::Run()
     case ERROR:      { Error();      break; }
     default:
     {
-      Debug::Print("Default case reached!");
+      DebugClass::Print("Default case reached!");
     }
   }
 }
@@ -58,16 +59,16 @@ void TcpStateMachine::Connecting()
 
 void TcpStateMachine::Opening()
 {
-  Debug::Print("Trying to open server");
+  DebugClass::Print("Trying to open server");
   nsapi_error_t ret = server->TCPServer::open(&(server->eth));
   if(NSAPI_ERROR_OK == ret)
   {
-     Debug::Print("Server opened successfully");
+     DebugClass::Print("Server opened successfully");
      state = BINDING;
   }
   else
   {
-    Debug::Print("Error during server opening: ", ret);
+    DebugClass::Print("Error during server opening: ", ret);
     state = ERROR;
   }
 }
@@ -75,17 +76,17 @@ void TcpStateMachine::Opening()
 
 void TcpStateMachine::Binding()
 {
-  Debug::Print("Trying to bind port ", server->port);
+  DebugClass::Print("Trying to bind port ", server->port);
   nsapi_error_t ret = server->TCPServer::bind(
     server->eth.get_ip_address(), server->port);
   if(NSAPI_ERROR_OK == ret)
   {
-    Debug::Print("Port bound to ", server->eth.get_ip_address());
+    DebugClass::Print("Port bound to ", server->eth.get_ip_address());
     state = LISTENING;
   }
   else
   {
-    Debug::Print("Error during server binding: ", ret);
+    DebugClass::Print("Error during server binding: ", ret);
     state = ERROR;
   }
 }
@@ -93,16 +94,16 @@ void TcpStateMachine::Binding()
 
 void TcpStateMachine::Listening()
 {
-  Debug::Print("Start listening");
+  DebugClass::Print("Start listening");
   nsapi_error_t ret = server->TCPServer::listen(server->simultanConnections);
   if(NSAPI_ERROR_OK == ret)
   {
-    Debug::Print("Listening succsessful");
+    DebugClass::Print("Listening succsessful");
     state = ACCEPTING;
   }
   else
   {
-    Debug::Print("Error during listening ", ret);
+    DebugClass::Print("Error during listening ", ret);
     state = ERROR;
   }
 }
@@ -110,19 +111,19 @@ void TcpStateMachine::Listening()
 
 void TcpStateMachine::Accepting()
 {
-  Debug::Print("Accepting connection");
+  DebugClass::Print("Accepting connection");
   nsapi_error_t ret = server->TCPServer::accept(
     &(server->clientSock), &(server->clientAddr));
   if(NSAPI_ERROR_OK == ret)
   {
-    Debug::Print("Accepted: ", server->clientAddr.get_ip_address());
-    Debug::Print("Communication port: ", server->clientAddr.get_port());
+    DebugClass::Print("Accepted: ", server->clientAddr.get_ip_address());
+    DebugClass::Print("Communication port: ", server->clientAddr.get_port());
 
     state = RUNNING;
   }
   else
   {
-    Debug::Print("Error during accepting ", ret);
+    DebugClass::Print("Error during accepting ", ret);
     state = ERROR;
   }
 }
@@ -132,15 +133,15 @@ void TcpStateMachine::Running()
 {
   char message[] = "Hello World!\n\r";
   
-  Debug::Print("Start sending");
+  DebugClass::Print("Start sending");
   nsapi_error_t ret = server->clientSock.send(message, sizeof(message));
   if(NSAPI_ERROR_OK <= ret)
   {
-    Debug::Print("Sending succsessful");
+    DebugClass::Print("Sending succsessful");
   }
   else
   {
-    Debug::Print("Error during sending ", ret);
+    DebugClass::Print("Error during sending ", ret);
     state = ERROR;
   }
 

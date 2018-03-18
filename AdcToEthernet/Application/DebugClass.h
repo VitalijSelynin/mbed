@@ -1,14 +1,14 @@
 ///////////////////////////////////////////////////////////
-//  Debug.h
+//  DebugClass.h
 //  Declaration of the class Debug
 //  Created on:      11-Feb-2018 15:10:12
 //  Original author: Vitalij
 ///////////////////////////////////////////////////////////
 
-#ifndef DEBUG_H
-#define DEBUG_H
+#ifndef DEBUGCLASS_H
+#define DEBUGCLASS_H
 
-class Debug
+class DebugClass
 {
 public:
   static void Print(const char* cString);
@@ -18,4 +18,4 @@ public:
 };
 
 
-#endif //DEBUG_H
+#endif //DEBUGCLASS_H

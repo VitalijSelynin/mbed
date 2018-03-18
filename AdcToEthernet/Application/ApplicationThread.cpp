@@ -6,10 +6,10 @@
 ///////////////////////////////////////////////////////////
 
 #include"ApplicationThread.h"
-#include "Debug.h"
+#include "DebugClass.h"
 #include "VoltageReader.h"
 #include "Thread.h"
-#include "MyTcpServer.h"
+#include "ConnectorClient.h"
 
 void ApplicationThread::Start()
 {
@@ -18,26 +18,27 @@ void ApplicationThread::Start()
 
 void ApplicationThread::Run()
 {
-  Debug::Print("ApplicationThread started");
+  DebugClass::Print("ApplicationThread started");
+
   VoltageReader voltage;
-  MyTcpServer server;
+  ConnectorClient client;
 
-  server.Start();
+  client.Start();
 
-    float voltageArray[voltage.GetVoltageCount()];
-    for(uint32_t i = 0; i < voltage.GetVoltageCount(); i++)
-    {
-      voltageArray[i] = voltage.GetRawValue(i);
-    }
+  float voltageArray[voltage.GetVoltageCount()];
+  for(uint32_t i = 0; i < voltage.GetVoltageCount(); i++)
+  {
+    voltageArray[i] = voltage.GetRawValue(i);
+  }
 
-    Debug::Print("Voltage 0: ", voltageArray[0]);
-    Debug::Print("Voltage 1: ", voltageArray[1]);
-    Debug::Print("Voltage 2: ", voltageArray[2]);
-    Debug::Print("Voltage 3: ", voltageArray[3]);
-    rtos::Thread::wait(500);
+  DebugClass::Print("Voltage 0: ", voltageArray[0]);
+  DebugClass::Print("Voltage 1: ", voltageArray[1]);
+  DebugClass::Print("Voltage 2: ", voltageArray[2]);
+  DebugClass::Print("Voltage 3: ", voltageArray[3]);
+  rtos::Thread::wait(500);
 
   for(;;)
   {
-    server.Run();
+    client.Run();
   }
 }

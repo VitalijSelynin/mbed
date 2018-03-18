@@ -28,7 +28,10 @@
                 "${workspaceRoot}/mbed-os/rtos/TARGET_CORTEX/rtx4",
                 "${workspaceRoot}/mbed-os/hal",
                 "${workspaceRoot}/mbed-os/features/FEATURE_LWIP/lwip-interface/lwip/src/include",
-                "${workspaceRoot}/mbed-os/features/FEATURE_LWIP/lwip-interface/lwip-sys"
+                "${workspaceRoot}/mbed-os/features/FEATURE_LWIP/lwip-interface/lwip-sys",
+                "${workspaceRoot}/mbed-client",
+                "${workspaceRoot}/mbed-client/mbed-client",
+                "${workspaceRoot}/mbed-os/features/mbedtls/inc"
             ],
             "defines": [
                 "_DEBUG",
