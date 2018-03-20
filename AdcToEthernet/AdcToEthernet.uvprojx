@@ -53,8 +53,8 @@
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
-          <DebugInformation>0</DebugInformation>
-          <BrowseInformation>0</BrowseInformation>
+          <DebugInformation>1</DebugInformation>
+          <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\BUILD\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -429,6 +429,11 @@
               <FileName>ConnectorClientStateMachine.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\Application\ConnectorClientStateMachine.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SimpleValue.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Application\SimpleValue.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -2774,6 +2779,26 @@
               <FileName>nsdynmemLIB.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\mbed-os\features\FEATURE_COMMON_PAL\nanostack-libservice\source\nsdynmemLIB\nsdynmemLIB.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbed_trace.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mbed-os\features\FEATURE_COMMON_PAL\mbed-trace\source\mbed_trace.c</FilePath>
+            </File>
+            <File>
+              <FileName>ip6tos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mbed-os\features\FEATURE_COMMON_PAL\nanostack-libservice\source\libip6string\ip6tos.c</FilePath>
+            </File>
+            <File>
+              <FileName>stoip6.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mbed-os\features\FEATURE_COMMON_PAL\nanostack-libservice\source\libip6string\stoip6.c</FilePath>
+            </File>
+            <File>
+              <FileName>common_functions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mbed-os\features\FEATURE_COMMON_PAL\nanostack-libservice\source\libBits\common_functions.c</FilePath>
             </File>
           </Files>
         </Group>

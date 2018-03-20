@@ -9,6 +9,8 @@
 #define CONNECTORCLIENTSTATEMACHINE_H
 
 #include "m2mnsdlinterface.h"
+#include "SimpleValue.h"
+#include "mbed-client/m2mdevice.h"
 
 class ConnectorClient;
 
@@ -35,6 +37,8 @@ private:
 
   ConnectorClient* connector;
   M2MObjectList objectList;
+  SimpleValue value;
+
 
   void Connecting(void);
   void Setup(void);

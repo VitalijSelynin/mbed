@@ -20,7 +20,7 @@ ConnectorClientStateMachine::ConnectorClientStateMachine(ConnectorClient* connec
 : connector(connector),
   state(IDLE)
 {
-  ;
+  
 }
 
 
@@ -90,6 +90,7 @@ void ConnectorClientStateMachine::Setup()
     connector->mbedClient.create_device_object();
 
   objectList.push_back(deviceObject);
+  objectList.push_back(value.GetObject());
   // TODO other objects
 
   state = REGISTER;
@@ -115,48 +116,28 @@ void ConnectorClientStateMachine::Register()
 void ConnectorClientStateMachine::Update()
 {
   DebugClass::Print("Start Updateing");
+  if(connector->mbedClient.register_successful())
+  {
   connector->mbedClient.test_update_register();
-  rtos::Thread::wait(25000);
+}
+  else
+  {
+    DebugClass::Print("Registration in progress");
+  }
+
+  rtos::Thread::wait(10000);
 }
 
 
 void ConnectorClientStateMachine::Unregister()
 {
-  // DebugClass::Print("Accepting connection");
-  // nsapi_error_t ret = server->TCPServer::accept(
-  //   &(server->clientSock), &(server->clientAddr));
-  // if(NSAPI_ERROR_OK == ret)
-  // {
-  //   DebugClass::Print("Accepted: ", server->clientAddr.get_ip_address());
-  //   DebugClass::Print("Communication port: ", server->clientAddr.get_port());
-
-  //   state = RUNNING;
-  // }
-  // else
-  // {
-  //   DebugClass::Print("Error during accepting ", ret);
-  //   state = ERROR;
-  // }
+  // TODO
 }
 
 
 void ConnectorClientStateMachine::Detach()
 {
-  // char message[] = "Hello World!\n\r";
-  
-  // DebugClass::Print("Start sending");
-  // nsapi_error_t ret = server->clientSock.send(message, sizeof(message));
-  // if(NSAPI_ERROR_OK <= ret)
-  // {
-  //   DebugClass::Print("Sending succsessful");
-  // }
-  // else
-  // {
-  //   DebugClass::Print("Error during sending ", ret);
-  //   state = ERROR;
-  // }
-
-  // rtos::Thread::wait(100);
+  // TODO
 }
 
 

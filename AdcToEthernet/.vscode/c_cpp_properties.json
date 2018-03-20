@@ -31,7 +31,11 @@
                 "${workspaceRoot}/mbed-os/features/FEATURE_LWIP/lwip-interface/lwip-sys",
                 "${workspaceRoot}/mbed-client",
                 "${workspaceRoot}/mbed-client/mbed-client",
-                "${workspaceRoot}/mbed-os/features/mbedtls/inc"
+                "${workspaceRoot}/mbed-os/features/mbedtls/inc",
+                "${workspaceRoot}/mbed-client-c",
+                "${workspaceRoot}/mbed-os/features/FEATURE_COMMON_PAL/mbed-coap/mbed-coap",
+                "${workspaceRoot}/mbed-client-mbed-tls/test/mbed-client-mbed-tls/unittest/common",
+                "${workspaceRoot}/mbed-client/source/include"
             ],
             "defines": [
                 "_DEBUG",
